@@ -34,30 +34,31 @@ export const RatingCard = ({ rating }: RatingCardProps) => {
             <Text>{rating.user.name}</Text>
             <Text size='sm' color='gray-400'>{distance}</Text>
           </div>
-
         </section>
+
         <RatingStars rating={rating.rate} />
       </UserDetails>
+
       <BookDetails>
         <Link href={`/explore?book=${rating.book_id}`}>
           <BookImage width={108} height={152} alt={rating.book.name} src={rating.book.cover_url} />
         </Link>
-      </BookDetails>
-      <BookContent>
-        <div>
-          <Heading size={'xs'}>{rating.book.name}</Heading>
-          <Text size='sm' color='gray-400'>{rating.book.author}</Text>
-        </div>
+        <BookContent>
+          <div>
+            <Heading size={'xs'}>{rating.book.name}</Heading>
+            <Text size='sm' color='gray-400'>{rating.book.author}</Text>
+          </div>
 
-        <Text size='sm' color='gray-300' css={{ marginTop: '$5' }}>
-          {bookSummary}
-          {rating.book.summary.length > MAX_SUMMARY_LENGTH && (
-            <ToggleShowMoreButton onClick={toggleShowMore}>
-              {isShowingMore ? 'ver menos' : 'ver mais'}
-            </ToggleShowMoreButton>
-          )}
-        </Text>
-      </BookContent>
+          <Text size='sm' color='gray-300' css={{ marginTop: '$5' }}>
+            {bookSummary}
+            {rating.book.summary.length > MAX_SUMMARY_LENGTH && (
+              <ToggleShowMoreButton onClick={toggleShowMore}>
+                {isShowingMore ? 'ver menos' : 'ver mais'}
+              </ToggleShowMoreButton>
+            )}
+          </Text>
+        </BookContent>
+      </BookDetails>
 
 
     </Container>
