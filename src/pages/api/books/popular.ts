@@ -1,17 +1,17 @@
-import { prisma } from '@/lib/prisma'
-import { NextApiRequest, NextApiResponse } from 'next';
+import { prisma } from "@/lib/prisma"
+import { NextApiRequest, NextApiResponse } from "next";
 
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== 'GET') return res.status(405).end();
+  if (req.method !== "GET") return res.status(405).end();
 
   const books = await prisma.book.findMany({
     orderBy: {
       ratings: {
-        _count: 'desc'
+        _count: "desc"
       }
     },
     include: {
@@ -21,7 +21,7 @@ export default async function handler(
   })
 
   const booksAvgRating = await prisma.rating.groupBy({
-    by: ['book_id'],
+    by: ["book_id"],
     where: {
       book_id: {
         in: books.map(book => book.id)

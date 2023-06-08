@@ -1,8 +1,8 @@
-import { Book } from '@prisma/client'
-import { BookDetails, BookName, Container } from './styles'
-import { BookImage } from '../RatingCard/styles'
-import { Text } from '../Typography'
-import { RatingStars } from '../RatingStars'
+import { Book } from "@prisma/client"
+import { BookDetails, BookName, Container } from "./styles"
+import { BookImage } from "../RatingCard/styles"
+import { Text } from "../Typography"
+import { RatingStars } from "../RatingStars"
 
 export type BookWithAvgRating = Book & {
   avgRating: number
@@ -10,10 +10,10 @@ export type BookWithAvgRating = Book & {
 
 type BookCardProps = {
   book: BookWithAvgRating
-  size: 'md' | 'lg'
+  size: "md" | "lg"
 }
 
-export const BookCard = ({ book, size = 'md' }: BookCardProps) => {
+export const BookCard = ({ book, size = "md" }: BookCardProps) => {
   const IMAGE_SIZE = {
     md: {
       width: 64,
@@ -36,10 +36,10 @@ export const BookCard = ({ book, size = 'md' }: BookCardProps) => {
         css={{ minWidth: currentSize.width }} />
       <BookDetails>
         <div>
-          <BookName size={'xs'}>
+          <BookName size={"xs"}>
             {book.name}
           </BookName>
-          <Text size='sm' color='gray-400'>
+          <Text size="sm" color="gray-400">
             {book.author}
           </Text>
         </div>

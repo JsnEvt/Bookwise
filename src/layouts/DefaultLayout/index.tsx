@@ -1,7 +1,7 @@
-import { ReactNode } from 'react'
-import { Container, Content } from './styles'
-import Head from 'next/head'
-import { Sidebar } from '@/components/Sidebar'
+import { ReactNode } from "react"
+import { Container, Content } from "./styles"
+import Head from "next/head"
+import { Sidebar } from "@/components/Sidebar"
 
 type DefaultLayoutProps = {
   children: ReactNode

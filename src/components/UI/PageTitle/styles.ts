@@ -1,11 +1,11 @@
-import { styled } from '../../../../stitches.config';
+import { styled } from "../../../../stitches.config";
 
-export const Container = styled('div', {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '$3',
+export const Container = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  gap: "$3",
 
   svg: {
-    color: '$green100'
+    color: "$green100"
   }
 })

@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import { styled } from '../../../../stitches.config';
+import Image from "next/image";
+import { styled } from "../../../../stitches.config";
 
 
-export const Container = styled('div', {
-  borderRadius: '$full',
-  background: '$gradient-vertical',
+export const Container = styled("div", {
+  borderRadius: "$full",
+  background: "$gradient-vertical",
   padding: 1,
 
   variants: {
@@ -29,8 +29,8 @@ export const Container = styled('div', {
 })
 
 export const AvatarImage = styled(Image, {
-  borderRadius: '$full',
-  objectFit: 'cover',
-  width: '100%',
-  height: '100%'
+  borderRadius: "$full",
+  objectFit: "cover",
+  width: "100%",
+  height: "100%"
 })

@@ -1,14 +1,14 @@
-import { styled } from '../../../stitches.config';
+import { styled } from "../../../stitches.config";
 
-export const Container = styled('div', {
-  display: 'flex',
-  alignItems: 'center',
+export const Container = styled("div", {
+  display: "flex",
+  alignItems: "center",
 
   svg: {
-    color: '$purple100',
-    boxSizing: 'content-box',
+    color: "$purple100",
+    boxSizing: "content-box",
 
-    '&:first-child': {
+    "&:first-child": {
       paddingLeft: 0,
     }
   },
@@ -16,21 +16,21 @@ export const Container = styled('div', {
     size: {
       sm: {
         svg: {
-          padding: '0 2px',
+          padding: "0 2px",
           width: 14,
           height: 14
         }
       },
       md: {
         svg: {
-          padding: '0 2px',
+          padding: "0 2px",
           width: 14,
           height: 14
         }
       },
       lg: {
         svg: {
-          padding: '0 2px',
+          padding: "0 2px",
           width: 14,
           height: 14
         }

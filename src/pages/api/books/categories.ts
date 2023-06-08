@@ -8,15 +8,7 @@ export default async function handler(
 ) {
   if (req.method !== "GET") return res.status(405).end();
 
-  const ratings = await prisma.rating.findMany({
-    orderBy: {
-      created_at: "desc",
-    },
-    include: {
-      book: true,
-      user: true,
-    },
-    take: 10
-  })
-  return res.json({ ratings })
+  const categories = await prisma.category.findMany()
+
+  return res.json({ categories })
 }
