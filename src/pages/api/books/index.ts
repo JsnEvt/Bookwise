@@ -59,7 +59,8 @@ export default async function handler(
       ...book,
       ratings: ratings.length,
       avgRating: bookAvgRating?._avg.rate,
-      userHasRated: userBooksIds.includes(book.id)
+      alreadyRead: userBooksIds.includes(book.id)
     }
   })
+  return res.json({ books: booksWithAvgRating })
 }
