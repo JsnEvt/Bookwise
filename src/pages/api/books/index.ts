@@ -52,6 +52,7 @@ export default async function handler(
     userBooksIds = userBooks.map(book => book.id)
   }
 
+
   const booksWithAvgRating = books.map(book => {
     const bookAvgRating = booksAvgRating.find(avgRating => avgRating.book_id === book.id)
     const { ratings, ...bookInfo } = book

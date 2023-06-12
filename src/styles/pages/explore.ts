@@ -25,7 +25,7 @@ export const BooksGrid = styled('div', {
   display: 'grid',
   height: '100%',
   gridTemplateColumns: 'repeat(3, 1fr)',
-  gridAutoRows: '188',
+  gridAutoRows: 188,
   gap: '$5',
   overflowY: 'auto',
   paddingBottom: '40',

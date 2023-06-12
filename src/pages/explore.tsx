@@ -53,7 +53,7 @@ const ExplorePage: NextPageWithLayout = () => {
         <Tag active={selectedCategory === null} onClick={() => setSelectedCategory(null)} >
           Tudo
         </Tag>
-        {filteredBooks?.map(category => (
+        {categories?.map(category => (
           <Tag
             key={category?.id}
             active={selectedCategory === category.id}
@@ -63,7 +63,7 @@ const ExplorePage: NextPageWithLayout = () => {
         ))}
       </TagsContainer>
       <BooksGrid>
-        {books?.map(book => (
+        {filteredBooks?.map(book => (
           <BookCard key={book.id} size='lg' book={book} />
         ))}
 

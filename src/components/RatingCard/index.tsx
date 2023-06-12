@@ -3,7 +3,7 @@ import { BookContent, BookDetails, BookImage, Container, ToggleShowMoreButton, U
 import { Avatar } from "../UI/Avatar"
 import { Book, Rating, User } from "@prisma/client"
 import { Heading, Text } from "../Typography"
-import { getRelatimeTime } from "@/utils/getRelativeTime"
+import { getRelativeTime } from "@/utils/getRelativeTime"
 import { RatingStars } from "../RatingStars"
 import { useToggleShowMore } from "@/hooks/useToggleShowMore"
 
@@ -19,7 +19,7 @@ type RatingCardProps = {
 const MAX_SUMMARY_LENGTH = 180
 
 export const RatingCard = ({ rating }: RatingCardProps) => {
-  const distance = getRelatimeTime(new Date(rating.created_at), "pt-BR")
+  const distance = getRelativeTime(new Date(rating.created_at), "pt-BR")
 
   const { text: bookSummary, toggleShowMore, isShowingMore } = useToggleShowMore(rating.book.summary, MAX_SUMMARY_LENGTH)
 
