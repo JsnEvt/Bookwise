@@ -1,18 +1,46 @@
 import { ComponentProps } from "@stitches/react";
 import { Container } from "./styles"
 import { Star } from "@phosphor-icons/react";
+import { useState } from 'react';
 
 type RatingStarsProps = ComponentProps<typeof Container> & {
   rating: number;
   size?: "sm" | "md" | "lg"
+  setRating?: (rating: number) => void
 }
 
-export const RatingStars = ({ rating, size, ...props }: RatingStarsProps) => {
+export const RatingStars = ({ rating, size, setRating, ...props }: RatingStarsProps) => {
+  const [previewValue, setPreviewValue] = useState(0)
+  const isEditable = !!setRating //É editável?
+
+  const ratingValue = isEditable ? previewValue : rating
+
+  //para ativar as estrelas na avaliação:
+  const handleMouseEnter = (value: number) => {
+    if (isEditable)
+      setPreviewValue(value)
+  }
+
+  const handleMouseLeave = () => {
+    if (isEditable) {
+      setPreviewValue(rating)
+    }
+  }
+
+  const handleSetValue = () => {
+    if (isEditable) {
+      setRating(previewValue)
+    }
+  }
+
   return (
-    <Container {...props}>
+    <Container css={isEditable ? { cursor: 'pointer' } : undefined} size={size} {...props}>
       {Array.from({ length: 5 }).map((_, i) =>
         <Star key={`star-${i}`}
-          weight="fill"
+          weight={(i + 1) <= ratingValue ? 'fill' : 'regular'}
+          onMouseEnter={() => handleMouseEnter(i + 1)}
+          onMouseLeave={handleMouseLeave}
+          onClick={handleSetValue}
         />
       )}
     </Container>

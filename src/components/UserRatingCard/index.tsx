@@ -17,7 +17,7 @@ type UserRatingCardProps = {
 
 export const UserRatingCard = ({ rating }: UserRatingCardProps) => {
   const { data: session } = useSession()
-  const distance = getRelativeTime(new Date(rating.created_at), 'pt-BR')
+  const distance = getRelativeTime(new Date(rating.created_at), "pt-BR")
 
 
   const isOwner = session?.user?.id === rating.user_id

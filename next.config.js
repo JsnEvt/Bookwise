@@ -7,7 +7,7 @@ const nextConfig = {
       "github.com",
       "lh3.googleusercontent.com",
       "images.unsplash.com",
-      "/public/images/books"
+      "s3-alpha-sig.figma.com",
     ]
   }
 }

@@ -15,13 +15,13 @@ const ExplorePage: NextPageWithLayout = () => {
   const [search, setSearch] = useState("")
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
 
-  const { data: categories } = useQuery<Category[]>(['categories'], async () => {
-    const { data } = await api.get('/books/categories');
+  const { data: categories } = useQuery<Category[]>(["categories"], async () => {
+    const { data } = await api.get("/books/categories");
     return data?.categories ?? []
   })
 
-  const { data: books } = useQuery<BookWithAvgRating[]>(['books', selectedCategory], async () => {
-    const { data } = await api.get('/books', {
+  const { data: books } = useQuery<BookWithAvgRating[]>(["books", selectedCategory], async () => {
+    const { data } = await api.get("/books", {
       params: {
         category: selectedCategory
       }

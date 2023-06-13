@@ -10,7 +10,7 @@ export default async function handler(
 
   const bookId = String(req.query.bookId)
 
-  const book = await prisma.book.findMany({
+  const book = await prisma.book.findUnique({
     where: { id: bookId },
     include: {
       categories: {

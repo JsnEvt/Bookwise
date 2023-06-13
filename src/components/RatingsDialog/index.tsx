@@ -1,5 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog'
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { BookContent, BookDetailsContainer, BookDetailsWrapper, BookImage, BookInfos, DialogClose, DialogContent, DialogOverlay } from './styles'
 import { BookOpen, BookmarkSimple, X } from '@phosphor-icons/react'
 import { Heading, Text } from '../Typography'
@@ -11,6 +11,7 @@ import { api } from '@/lib/axios'
 import { RatingWithAuthor } from '../UserRatingCard'
 import { CategoriesOnBooks, Category } from '@prisma/client'
 import { BookWithAvgRating } from '../BookCard'
+import { useRouter } from 'next/router'
 
 type BookDetails = BookWithAvgRating & {
   ratings: RatingWithAuthor[]
@@ -27,7 +28,18 @@ type RatingsDialogProps = {
 export const RatingsDialog = ({ bookId, children }: RatingsDialogProps) => {
   const [open, setOpen] = useState(false)
 
-  const { data: book } = useQuery<BookDetails>(['book', bookId], async () => {
+  //para conseguir abrir um livro, fazer login e ser redirecionado para a url do livro:
+
+  const router = useRouter()
+  const paramBookId = router.query.book as string
+
+  useEffect(() => {
+    if (paramBookId === bookId) {
+      setOpen(true)
+    }
+  }, [bookId, paramBookId])
+
+  const { data: book } = useQuery<BookDetails>(["book", bookId], async () => {
     const { data } = await api.get(`/books/details/${bookId}`);
     return data?.book ?? {}
   }, {
@@ -38,8 +50,17 @@ export const RatingsDialog = ({ bookId, children }: RatingsDialogProps) => {
 
   const categories = book?.categories?.map(x => x?.category?.name)?.join(', ') ?? ''
 
+  const onOpenChange = (open: boolean) => {
+    if (open) {
+      router.push(`/explore?book=${bookId}`, undefined, { shallow: true })
+    } else {
+      router.push('/explore', undefined, { shallow: true }) //shallow, apenas atualiza os parametros da rota, 
+      //sem realmente navegar.
+    }
+    setOpen(open)
+  }
   return (
-    <Dialog.Root open={open} onOpenChange={setOpen}>
+    <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Trigger asChild>
         {children}
       </Dialog.Trigger>
@@ -55,7 +76,7 @@ export const RatingsDialog = ({ bookId, children }: RatingsDialogProps) => {
             <>
               <BookDetailsWrapper>
                 <BookDetailsContainer>
-                  <BookImage width={171} height={242} alt={book?.name} src={book?.cover_url} />
+                  <BookImage width={171} height={242} alt={book?.name} src={book.cover_url} />
                   <BookContent>
                     <div>
                       <Heading size='sm'>{book.name}</Heading>
@@ -75,7 +96,7 @@ export const RatingsDialog = ({ bookId, children }: RatingsDialogProps) => {
                   <BookInfo icon={<BookOpen />} title='Páginas' info={String(book.total_pages)} />
                 </BookInfos>
               </BookDetailsWrapper>
-              <BookRatings ratings={book.ratings} />
+              <BookRatings bookId={bookId} ratings={book.ratings} />
             </>
           )}
 
