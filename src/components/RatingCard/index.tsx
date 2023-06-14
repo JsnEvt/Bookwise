@@ -1,11 +1,11 @@
-import Link from "next/link"
-import { BookContent, BookDetails, BookImage, Container, ToggleShowMoreButton, UserDetails } from "./styles"
-import { Avatar } from "../UI/Avatar"
-import { Book, Rating, User } from "@prisma/client"
-import { Heading, Text } from "../Typography"
-import { getRelativeTime } from "@/utils/getRelativeTime"
-import { RatingStars } from "../RatingStars"
 import { useToggleShowMore } from "@/hooks/useToggleShowMore"
+import { getRelativeTime } from "@/utils/getRelativeTime"
+import { Book, Rating, User } from "@prisma/client"
+import Link from "next/link"
+import { RatingStars } from "../RatingStars"
+import { BookContent, BookDetails, BookImage, CompactDetails, Container, ToggleShowMoreButton, UserDetails } from "./styles"
+import { Heading, Text } from "../Typography"
+import { Avatar } from "../UI/Avatar"
 
 export type RatingWithAuthorAndBook = Rating & {
   user: User
@@ -14,30 +14,33 @@ export type RatingWithAuthorAndBook = Rating & {
 
 type RatingCardProps = {
   rating: RatingWithAuthorAndBook
+  variant?: "default" | "compact"
 }
 
 const MAX_SUMMARY_LENGTH = 180
 
-export const RatingCard = ({ rating }: RatingCardProps) => {
-  const distance = getRelativeTime(new Date(rating.created_at), "pt-BR")
+export const RatingCard = ({ rating, variant = "default" }: RatingCardProps) => {
+  const distance = getRelativeTime(new Date(rating.created_at), 'pt-BR');
 
   const { text: bookSummary, toggleShowMore, isShowingMore } = useToggleShowMore(rating.book.summary, MAX_SUMMARY_LENGTH)
 
   return (
-    <Container>
-      <UserDetails>
-        <section>
-          <Link href={`/profile/${rating.user_id}`}>
-            <Avatar src={rating.user.avatar_url!} alt={rating.user.name} />
-          </Link>
-          <div>
-            <Text>{rating.user.name}</Text>
-            <Text size="sm" color="gray-400">{distance}</Text>
-          </div>
-        </section>
+    <Container variant={variant}>
+      {variant === "default" && (
+        <UserDetails>
+          <section>
+            <Link href={`/profile/${rating.user_id}`}>
+              <Avatar src={rating.user.avatar_url!} alt={rating.user.name} />
+            </Link>
+            <div>
+              <Text>{rating.user.name}</Text>
+              <Text size="sm" color="gray-400">{distance}</Text>
+            </div>
+          </section>
 
-        <RatingStars rating={rating.rate} />
-      </UserDetails>
+          <RatingStars rating={rating.rate} />
+        </UserDetails>
+      )}
 
       <BookDetails>
         <Link href={`/explore?book=${rating.book_id}`}>
@@ -45,11 +48,17 @@ export const RatingCard = ({ rating }: RatingCardProps) => {
         </Link>
         <BookContent>
           <div>
+            {variant === 'compact' && (
+              <CompactDetails>
+                <Text size='sm' color='gray-300'>{distance}</Text>
+                <RatingStars rating={rating.rate} />
+              </CompactDetails>
+            )}
             <Heading size={"xs"}>{rating.book.name}</Heading>
             <Text size="sm" color="gray-400">{rating.book.author}</Text>
           </div>
 
-          <Text size="sm" color="gray-300" css={{ marginTop: "$5" }}>
+          <Text size="sm" color="gray-300" css={{ marginTop: variant === 'compact' ? 'auto' : '$5' }}>
             {bookSummary}
             {rating.book.summary.length > MAX_SUMMARY_LENGTH && (
               <ToggleShowMoreButton onClick={toggleShowMore}>
@@ -59,8 +68,6 @@ export const RatingCard = ({ rating }: RatingCardProps) => {
           </Text>
         </BookContent>
       </BookDetails>
-
-
     </Container>
   )
 }
