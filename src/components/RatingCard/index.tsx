@@ -68,6 +68,6 @@ export const RatingCard = ({ rating, variant = "default" }: RatingCardProps) => 
           </Text>
         </BookContent>
       </BookDetails>
-    </Container>
+    </Container >
   )
 }

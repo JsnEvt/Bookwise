@@ -6,6 +6,7 @@ export const Container = styled("div", {
   borderRadius: 8,
   padding: "$6",
   display: "flex",
+  flexDirection: 'column',
 
   variants: {
     variant: {
@@ -37,7 +38,7 @@ export const UserDetails = styled("div", {
   section: {
     display: "flex",
     alignItems: "center",
-    gap: 4
+    gap: 10
   }
 })
 
