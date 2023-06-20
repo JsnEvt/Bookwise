@@ -36,7 +36,7 @@ const ProfilePage: NextPageWithLayout = () => {
   })
 
   //para saber se e o proprio perfil:
-  const isOwnProfile = session?.user.id === userId
+  const isOwnProfile = session?.user?.id === userId
 
   return (
     <HomeContainer>
