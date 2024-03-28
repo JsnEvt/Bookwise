@@ -124,20 +124,20 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 #### **Website**  ([React](https://reactjs.org/)  +  [TypeScript](https://www.typescriptlang.org/))
 
--   **[Phosphor-Icons](https://phosphoricons.com)**
+-   **[https://github.com/phosphor-icons/homepage](https://github.com/phosphor-icons/homepage)**
 -   **[Axios](https://github.com/axios/axios)**
--   **[Radix-UI](https://www.radix-ui.com)**
--   **[Stithces](https://stitches.dev/)**
--   **[Tanstack-React-Query](https://tanstack.com/query/latest)**
+-   **[https://www.radix-ui.com](https://github.com/radix-ui/primitives)**
+-   **[https://stitches.dev/](https://github.com/stitchesjs/stitches)**
+-   **[https://tanstack.com/query/latest](https://github.com/TanStack/query)**
 
 
 **Server**  ([NodeJS](https://nodejs.org/en/)  +  [TypeScript](https://www.typescriptlang.org/))
 
--   **[Next](https://nextjs.org)**
--   **[Next-Auth](https://next-auth.js.org)**
--   **[TypeScript](https://www.typescriptlang.org)**
--   **[Zod](https://zod.dev/)**
--   **[Prisma](https://www.prisma.io)**
+-   **[https://nextjs.org](https://github.com/vercel/next.js)**
+-   **[https://next-auth.js.org](https://github.com/nextauthjs/next-auth)**
+-   **[TypeScript](https://github.com/microsoft/TypeScript)**
+-   **[https://github.com/colinhacks/zod](https://github.com/zenseact/zod))**
+-   **[Prisma](https://github.com/prisma/prisma)**
 
 
 > Veja o arquivo  [package.json](https://github.com/JsnEvt/Bookwise/blob/main/package.json)
@@ -156,7 +156,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 [![Linkedin Badge](https://img.shields.io/badge/-Jason-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jason-everton-041226223/)](https://www.linkedin.com/in/jason-everton-041226223/)
 
-[![Gmail Badge](https://img.shields.io/badge/-jsnevtw10@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:jasonemsw10@gmail.com)](mailto:jasonemsw10@gmail.com)
+[![Gmail Badge](https://img.shields.io/badge/-jasonemsw10@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:jasonemsw10@gmail.com)](mailto:jasonemsw10@gmail.com)
 
 
 ## 📝 Licença
