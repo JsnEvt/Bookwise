@@ -106,19 +106,44 @@ $ npm install
 
 # No VSCode, abra a pasta onde o arquivo foi clonado e abra o projeto
 
-# Crie um arquivo .env na raíz e adicione a seguinte expressão (DATABASE_URL='file:./dev.db') - sem os parenteses
-# A aplicação precisa que o Prisma receba essa informação para fazer a comunicaçãoi com o banco de dados, caso contrário, dará erro.
-# Salve.
+$ Crie um arquivo .env na raíz e adicione a seguinte expressão no arquivo: (DATABASE_URL='file:./dev.db') - sem os parenteses
+# A aplicação precisa que o Prisma receba essa informação para fazer a comunicação com o banco de dados, caso contrário, dará erro.
+$ Salve.
 
 # Acesse o terminal do VS e execute a aplicação em modo desenvolvimento
-# Digite "num run dev" (sem as aspas)
+$ Digite "num run dev" (sem as aspas)
 
 A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 
-
 ```
-
 ---
+
+## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+#### **Website**  ([React](https://reactjs.org/)  +  [TypeScript](https://www.typescriptlang.org/))
+
+-   **[Phosphor-Icons](https://phosphoricons.com)**
+-   **[Axios](https://github.com/axios/axios)**
+-   **[Radix-UI](https://www.radix-ui.com)**
+-   **[Stithces](https://stitches.dev/)**
+-   **[Tanstack-React-Query](https://tanstack.com/query/latest)**
+
+
+**Server**  ([NodeJS](https://nodejs.org/en/)  +  [TypeScript](https://www.typescriptlang.org/))
+
+-   **[Next](https://nextjs.org)**
+-   **[Next-Auth](https://next-auth.js.org)**
+-   **[TypeScript](https://www.typescriptlang.org)**
+-   **[Zod](https://zod.dev/)**
+-   **[Prisma](https://www.prisma.io)**
+
+
+> Veja o arquivo  [package.json](https://github.com/jsnevt/bookwise/package.json)
+
+
+
 
 
 
