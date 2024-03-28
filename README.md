@@ -71,7 +71,7 @@ O layout da aplicação está disponível no Figma:
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
   <img alt="AppFullStack1" title="#AppFullStack" src="./assets/Login.png" width="400px">
 
-  <img alt="AppFullStack2" title="#NextLevelWeek" src="./assets/Inicio - Visitante.png" width="400px">
+  <img alt="AppFullStack2" title="#NextLevelWeek" src="./assets/In%C3%ADcio%20-%20Visitante.png" width="400px">
 </p>
 
 ---
