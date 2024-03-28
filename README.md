@@ -8,7 +8,7 @@
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 
   <a href="https://rocketseat.com.br">
-    <img alt="Feito por Jason" src="https://img.shields.io/badge/feito%20por-Jason-%237519C1">
+    <img alt="Feito por Rocketseat" src="https://img.shields.io/badge/feito%20por-Rocketseat-%237519C1">
   </a>
   
 </p>
