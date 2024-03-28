@@ -76,6 +76,52 @@ O layout da aplicação está disponível no Figma:
 
 ---
 
+## 🚀 Como executar o projeto
+
+O projeto foi feito usando o framework Next.js com React 
+
+
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), 
+[Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
+
+
+#### 🧭 Rodando a aplicação web (Frontend / Backend)
+
+```bash
+
+# No prompt de comando:
+# Crie uma pasta onde desejar
+# Acesse a pasta e no terminal
+
+# Clone este repositório
+$ git clone https://github.com/jsnevt/bookwise.git
+
+# Instale as dependências
+$ npm install
+
+# No VSCode, abra a pasta onde o arquivo foi clonado e abra o projeto
+
+# Crie um arquivo .env na raíz e adicione a seguinte expressão (DATABASE_URL='file:./dev.db') - sem os parenteses
+# A aplicação precisa que o Prisma receba essa informação para fazer a comunicaçãoi com o banco de dados, caso contrário, dará erro.
+# Salve.
+
+# Acesse o terminal do VS e execute a aplicação em modo desenvolvimento
+# Digite "num run dev" (sem as aspas)
+
+A aplicação será aberta na porta:3000 - acesse http://localhost:3000
+
+
+```
+
+---
+
+
+
 
 
 
