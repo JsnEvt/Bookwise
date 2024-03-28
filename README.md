@@ -1,5 +1,4 @@
 <p align="center">
-
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/jsnevt/README-bookwise">
   
   <a href="https://github.com/jsnevt/README-bookwise/commits/master">
@@ -18,5 +17,6 @@
   <a href="https://blog.rocketseat.com.br/">
     <img alt="Stargazers" src="https://img.shields.io/badge/Blog-Rocketseat-%237159c1?style=flat&logo=ghost">
     </a>
-  
 </p>
+
+
