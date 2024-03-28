@@ -1,10 +1,8 @@
 <p align="center">
-  <img alt="Repository size" src="[https://img.shields.io/github/repo-size/jsnevt/README-bookwise](https://img.shields.io/github/repo-size/jsnevt/bookwise
-)">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/jsnevt/bookwise">
   
   <a href="https://github.com/jsnevt/README-bookwise/commits/master">
-    <img alt="GitHub last commit" src="[https://img.shields.io/github/last-commit/jsnevt/README-bookwise](https://img.shields.io/github/last-commit/jsnevt/bookwise
-)">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/jsnevt/bookwise">
   </a>
     
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
