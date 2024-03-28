@@ -140,7 +140,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 -   **[Prisma](https://www.prisma.io)**
 
 
-> Veja o arquivo  [package.json](https://github.com/jsnevt/bookwise/package.json)
+> Veja o arquivo  [package.json](https://github.com/JsnEvt/Bookwise/blob/main/package.json)
 
 
 
